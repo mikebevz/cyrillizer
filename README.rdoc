@@ -6,6 +6,7 @@
 
 Character conversion from latin alphabet to Macedonian cyrillic alphabet and vice versa
 
+Convertion from Ukrainian and Russian works only from latin to cyrillic
 == SYNOPSIS:
 
 - Ruby version <= 1.8.7

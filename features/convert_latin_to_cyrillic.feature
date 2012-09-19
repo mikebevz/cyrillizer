@@ -4,8 +4,8 @@ Feature: Convert Latin To Cyrilic
     I want to be able to convert all latic characters to cyrilic
 
     Scenario Outline: User enters latic characters
-        When user writes <latin> character
-        Then that character will be converted into <cyrilic>
+        When user writes latin <latin> character
+        Then that latin character will be converted into <cyrilic>
 
         Examples:
             | latin | cyrilic |
@@ -80,6 +80,7 @@ Feature: Convert Latin To Cyrilic
             |  sh   |    ш    |
             |  SH   |    Ш    |
             |  Sh   |    Ш    |
+           
 
     Scenario Outline: User writes sentences in latic characters
         When user writes <latin> text
@@ -90,3 +91,30 @@ Feature: Convert Latin To Cyrilic
             | abeceda         | абецеда        |
             | Cela rechenica  | Цела реченица  |
 
+    Scenario Outline: User writes sentences in cyrillic
+        When user writes cyrillic <cyrillic> character
+        Then that cyrillic character will be converted into <latin>
+      
+        Examples:
+          # Ukrainian letters - one way - fr
+          | latin | cyrillic|
+          |  I    |    І    |
+          |  i    |    і    |
+          |  Yi   |    Ї    |
+          |  yi   |    ї    |
+          |  Ye   |    Є    |
+          |  ye   |    є    |
+          |  G    |    Ґ    |
+          |  g    |    ґ    |
+          |  Yu   |    Ю    |
+          |  yu   |    ю    |
+          |  Ya   |    Я    |
+          |  ya   |    я    |
+          # Russian letters
+          |  Y    |    Ы    | 
+          |  y    |    ы    | 
+          |  E    |    Э    |
+          |  e    |    э    |
+          |  Yo   |    Ё    | 
+          |  yo   |    ё    |
+   
